@@ -1,0 +1,4 @@
+gradio
+tensorflow==2.15.0
+tensorflow-hub
+keras==2.15.0
