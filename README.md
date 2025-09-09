@@ -25,12 +25,56 @@ A lightweight **MobileNetV2 model** was fine-tune using the open-source **TACO d
 
 ### ️🛠️Tech Stack & Tools:
 
-Layer Tool/Framework Purpose
-Model TensorFlow + MobileNetV2 Lightweight image classification
-Real-time App OpenCV + Gradio Webcam frame capture + UI
-Deployment Hugging Face Spaces Public demo hosting
-DevOps Git + GitHub Actions (opt) CI/CD for deployment
-Monitoring Streamlit (optional) Live usage & accuracy
 
-dashboard 
+* Model -> TensorFlow + MobileNetV2 it's a Lightweight image classification
+* Real-time App -> OpenCV + Gradio for Webcam frame capture and UI
+* Deployment -> Hugging Face Spaces free open-source Public demo hosting
+* DevOps -> Git + GitHub CI/CD for deployment
+* Monitoring -> Streamlit for Live usage & accuracy dashboard
+
+### Dataset Description
+
+**Source**: TACO (Trash Annotations in Contex)
+
+* images: Urban waste photos from public bins
+* annotations: COCO-style bounding boxes and labels
+* categories: Plastic, paper, metal, glass, food, cardboard
+
+### 🔁Workflow Summary
+
+**1. Data Preparation**
+   * Ingest and clean TACO dataset
+   * Resize, flip, and augment images for better generalization
+   * Convert labels to appropriate training format
+
+**2. Model Training**
+   * Fine-tune MobileNetV2 on selected waste classes
+   *Evaluate using F1 score, accuracy, and confusion matrix
+   *(Optional) Export to TensorFlow Lite for edge deployment
+
+**3. Real-Time App Integration**
+  * Capture live webcam frames using cv2.VideoCapture()
+  * Preprocess each frame to match model input size
+  * Pass frames to the trained model for prediction
+  * Display class label live using cv2.putText() and Gradio
+
+**4. Deployment**
+  * Host Gradio interface on Hugging Face Spaces
+  * Export model (.h5 or .onnx)
+  * Optional GitHub Actions for CI/CD pipeline
+
+### Project Impacts
+
+* Real-time sorting guidance for the public via smart bins
+* Reduced contamination in city waste streams
+* Actionable data for city councils through analytics dashboards
+* Increased awareness and behavioral change in waste disposal habits
+
+### ✅Key Delivarables:
+
+* Cleaned and augmented TACO dataset
+* Trained MobileNetV2 model (.h5 or .tflite)
+* Gradio app with webcam input and real-time prediction
+* Public deployment on Hugging Face Spaces
+* Final strategy report with recommendations
 
